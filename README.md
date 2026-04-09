@@ -1,6 +1,20 @@
-# CVE-CWE-CAPEC-ATT&CK-D3FEND Mapper
+# CSC Research / NetVision
 
-This project is a **Streamlit-based web application** that links software, firmware, and hardware vulnerabilities (CVE's) to related CWE's, CAPEC Attack Patterns, available MITRE Taxonomies (Att&CK, OWASP, and even the, now deprecated, WASC ID's), and MITRE D3FEND Techniques.   
+This repository contains two main surfaces:
+
+## NetVision (FastAPI + React)
+
+A **network scanning dashboard** with a **modular scanner plugin** system, JSON logging, optional **WebSocket** live output, CVE taxonomy APIs, and D3 graph visualization.
+
+- **Backend:** `backend/` — run with `uvicorn app.main:app --reload --app-dir backend` (from repo root). Add new tools by implementing `ScannerPlugin` and registering them in `backend/app/scanners/plugins.py` (see `plugin_template.py` and `nmap_scanner.py`).
+- **Frontend:** `frontend/` — `npm install && npm run dev` (Vite dev server proxies `/api` → `http://127.0.0.1:8000`). The UI loads available scanners from `GET /api/v1/scans/plugins`.
+- **Details:** see [NETVISION.md](NETVISION.md).
+
+---
+
+# CVE-CWE-CAPEC-ATT&CK-D3FEND Mapper (Streamlit)
+
+The project also includes a **Streamlit-based web application** that links software, firmware, and hardware vulnerabilities (CVE's) to related CWE's, CAPEC Attack Patterns, available MITRE Taxonomies (Att&CK, OWASP, and even the, now deprecated, WASC ID's), and MITRE D3FEND Techniques.   
 
 Users can analyse a **Single CVE** or a **Batch of CVE's using appropriate CSV files**, explore relationships interactively, and export the results as a **PDF Report**
 

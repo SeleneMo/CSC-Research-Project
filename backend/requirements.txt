@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+fpdf2
+python-multipart
+nvdlib
+requests

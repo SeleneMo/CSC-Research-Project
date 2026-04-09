@@ -1,0 +1,12 @@
+__pycache__/
+venv/
+.venv/
+*.py[cod]
+*.pyo
+*.pyd
+.DS_Store
+.env
+backend/logs/scans.jsonl
+backend/logs/cve_mappings.jsonl
+frontend/node_modules/
+frontend/dist/
